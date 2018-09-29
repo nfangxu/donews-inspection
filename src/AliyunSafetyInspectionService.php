@@ -92,7 +92,7 @@ class AliyunSafetyInspectionService implements SafetyInspection
                 throw new SafetyInspectionException($response->msg, $response->code);
             }
         }
-        return true;
+        return $success;
     }
 
     public function image($urls, $func)
@@ -129,6 +129,7 @@ class AliyunSafetyInspectionService implements SafetyInspection
                 foreach ($response->data as $k => $taskResult) {
                     if (200 == $taskResult->code) {
                         $success[$k][] = $taskResult->results[0];
+                        $func($taskResult->results[0]);
                     } else {
                         throw new SafetyInspectionException($response->msg, $response->code);
                     }
@@ -137,6 +138,6 @@ class AliyunSafetyInspectionService implements SafetyInspection
                 throw new SafetyInspectionException($response->msg, $response->code);
             }
         }
-        return $func($success);
+        return $success;
     }
 }
