@@ -1,0 +1,29 @@
+{
+    "name": "fangxu/safety-inspection",
+    "description": "donews safety inspection",
+    "keywords": ["laravel","composer","aliyun"],
+    "type": "library",
+    "license": "MIT",
+    "require" : {
+        "nfangxu/aliyuncs-green": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fangxu\\SafetyInspection\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Fangxu\\SafetyInspection\\SafetyInspectionServiceProvider"
+            ]
+        }
+    }, 
+    "authors": [
+        {
+          "name": "nfangxu",
+          "email": "nfangxu@gmail.com",
+          "homepage": "https://nfangxu.com"
+        }
+    ]
+}
