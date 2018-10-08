@@ -40,6 +40,6 @@ class SafetyInspectionServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return [AliyunSafetyInspectionService::class];
+        return [SafetyInspection::class];
     }
 }
